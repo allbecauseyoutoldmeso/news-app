@@ -5,8 +5,7 @@ var guardian = 'http://content.guardianapis.com';
 var ukNews = '/uk-news';
 
 apiGetter = new ApiGetter(makers + guardian + ukNews);
-jsonObj = apiGetter.requestAndParseAPI();
-newsController = new NewsController(jsonObj);
+newsController = new NewsController(apiGetter.requestAndParseAPI());
 newsController.createArticles();
 newsController.renderHeadlines();
 
