@@ -15,6 +15,13 @@ function testSummaryText() {
   assert.toEqual(article.viewSummary(), 'Heroic rescue in South London');
 }
 
+function testArticleUrl() {
+  var article = new Article('Felix releases new flavours');
+  article.addUrl('http://www.catspyjamas.com');
+  assert.toEqual(article.url(), 'http://www.catspyjamas.com');
+}
+
 testArticleText();
 testArticleHeadline();
 testSummaryText();
+testArticleUrl();

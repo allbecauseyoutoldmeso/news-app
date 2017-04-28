@@ -27,5 +27,9 @@
     this._url = url;
   };
 
+  Article.prototype.url = function() {
+    return this._url;
+  };
+
 exports.Article = Article;
 })(this);
