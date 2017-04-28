@@ -2,6 +2,7 @@
 
   function NewsController(url) {
     this._url = url;
+    this._articleList = new ArticleList();
   }
 
   NewsController.prototype.requestAPI = function() {
@@ -12,8 +13,21 @@
   };
 
   NewsController.prototype.requestAndParseAPI = function() {
-    json_obj = JSON.parse(this.requestAPI());
-    return json_obj;
+    var jsonObj = JSON.parse(this.requestAPI());
+    this._results = jsonObj.response.results;
+  };
+
+  NewsController.prototype.createArticles = function() {
+    for(x=0; x<10; x++) {
+      var thisArticle = new Article(this._results[x].webTitle);
+      thisArticle.addUrl(this._results[x].webUrl);
+      this._articleList.storeArticle(thisArticle);
+    }
+  };
+
+  NewsController.prototype.renderHeadlines = function() {
+    var articleListView = new ArticleListView(this._articleList);
+    articleListView.renderHeadlines();
   };
 
   exports.NewsController = NewsController;
