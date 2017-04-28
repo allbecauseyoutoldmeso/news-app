@@ -19,8 +19,13 @@
     this._summary = summary;
   };
 
-  Article.prototype.viewSummary = function () {
+  Article.prototype.viewSummary = function() {
     return this._summary;
-};
+  };
+
+  Article.prototype.addUrl = function(url) {
+    this._url = url;
+  };
+
 exports.Article = Article;
 })(this);
