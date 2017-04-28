@@ -1,15 +1,14 @@
 (function(exports) {
 
   function NewsController(jsonObj) {
-    this._jsonObj = jsonObj;
+    this._results = jsonObj.response.results;
     this._articleList = new ArticleList();
   }
 
   NewsController.prototype.createArticles = function() {
-    results = this._jsonObj.response.results;
     for(x=0; x<10; x++) {
-      var thisArticle = new Article(results[x].webTitle);
-      thisArticle.addUrl(results[x].webUrl);
+      var thisArticle = new Article(this._results[x].webTitle);
+      thisArticle.addUrl(this._results[x].webUrl);
       this._articleList.storeArticle(thisArticle);
     }
   };
