@@ -10,5 +10,10 @@
     return string;
   };
 
+  ArticleListView.prototype.renderHeadlines = function() {
+    var element = document.getElementById('headlines');
+    element.innerHTML = this.viewHeadlines();
+  };
+
   exports.ArticleListView = ArticleListView;
 })(this);

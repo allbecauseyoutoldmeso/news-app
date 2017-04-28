@@ -12,14 +12,7 @@ var json_obj = newsController.requestAndParseAPI();
 var articleList = new ArticleList();
 articleList.storeArticle(new Article(json_obj.main.temp + ' is the temperature!'));
 articleList.storeArticle(new Article(json_obj.name + ' is where we are!'));
-
 var articleListView = new ArticleListView(articleList);
-
-function renderHeadlines() {
-  var element = document.getElementById('headlines');
-  element.innerHTML = articleListView.viewHeadlines();
-}
-
-renderHeadlines();
+articleListView.renderHeadlines();
 
 });
