@@ -1,10 +1,15 @@
 (function(exports) {
-  function Article(headline) {
+  function Article(headline, id) {
     this._headline = headline;
+    this._id = id;
   }
 
   Article.prototype.headline = function () {
     return this._headline;
+  };
+
+  Article.prototype.getId = function() {
+    return this._id;
   };
 
   Article.prototype.addText = function(text) {

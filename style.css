@@ -1,0 +1,15 @@
+body {
+  background: rgb(102,185,189);
+}
+
+#title {
+  font-family: 'Comfortaa', cursive;
+  color: yellow;
+  text-align: center;
+}
+
+#headlines {
+  font-family: 'Comfortaa', cursive;
+  color: yellow;
+  text-align: center;
+}
