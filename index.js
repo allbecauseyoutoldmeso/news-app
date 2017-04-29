@@ -5,8 +5,8 @@ var guardian = '/guardian?apiRequestUrl=http://content.guardianapis.com';
 var ukNews = '/uk-news';
 var aylien = '/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=';
 
-apiGetter = new ApiGetter(makers + guardian + ukNews);
-newsController = new NewsController(apiGetter.requestAndParseAPI());
+var apiGetter = new ApiGetter(makers + guardian + ukNews);
+var newsController = new NewsController(apiGetter.requestAndParseAPI());
 newsController.createArticles();
 newsController.renderHeadlines();
 
@@ -15,11 +15,14 @@ function makeUrlChange() {
 }
 
 function showSummary() {
-  article = newsController._articleList._articles[getNoteFromUrl(window.location)];
-  apiGetter = new ApiGetter(makers + aylien + article.url());
-  console.log(apiGetter.requestAndParseAPI());
-  article.addSummary(apiGetter.requestAndParseAPI());
-
+  var articleId = getNoteFromUrl(window.location);
+  var article = newsController._articleList._articles[articleId];
+  var apiGetter = new ApiGetter(makers + aylien + article.url());
+  var json_obj = apiGetter.requestAndParseAPI();
+  article.addSummary(json_obj.sentences);
+  article.addText(json_obj.text);
+  var summaryDiv = document.getElementById('summary_' + articleId);
+  summaryDiv.innerHTML = article.viewSummary()[0];
 }
 
 function getNoteFromUrl(location) {
@@ -29,12 +32,3 @@ function getNoteFromUrl(location) {
 makeUrlChange();
 
 });
-
-
-
-
-
-//summary = document.getElementById('summary_0');
-
-//newsController._articleList._articles[0]._summary.sentences[0]
-//newsController._articleList._articles[0]._summary.text

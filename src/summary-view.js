@@ -5,7 +5,7 @@
   }
 
   SummaryView.prototype.getHTML = function() {
-    return '<div>' + this._article.viewSummary() + '</div>'    
+    return '<div>' + this._article.viewSummary() + '</div>';    
   };
 
 
