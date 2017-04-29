@@ -4,8 +4,8 @@
   }
   ArticleListView.prototype.viewHeadlines = function () {
     string = '';
-    this._articleList.showHeadlines().forEach(function(headline){
-    string = string + '<p>' + headline + '</p>';
+    this._articleList.showArticles().forEach(function(article){
+    string = string + '<p>' + article.headline() + '</p>';
   });
     return string;
   };
