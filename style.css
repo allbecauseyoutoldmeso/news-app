@@ -17,11 +17,23 @@ body {
   text-align: justify;
 }
 
+.headlines {
+  color: yellow;
+}
+
+.summary {
+  color: hotpink;
+}
+
+.text {
+  color: blue;
+}
+
 a {
   text-decoration: none;
   color: yellow
 }
 
-a:hover {
+/*a:hover {
     color: hotpink;
-}
+}*/

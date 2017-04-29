@@ -7,9 +7,9 @@
   ArticleListView.prototype.viewHeadlines = function () {
     var string = '';
     this._articleList.showArticles().forEach(function(article){
-    string = string + "<p><a href='#headline_" + article.getId() + "'>" + article.headline() + "</a></p>"
-                    + "<a href='#summary_" + article.getId() + "'><p id='summary_" + article.getId() + "'><p></a>"
-                    + "<p id='text_" + article.getId() + "'><p>";
+    string = string + "<p class='headline'><a href='#headline_" + article.getId() + "'>" + article.headline() + "</a></p>"
+                    + "<a href='#summary_" + article.getId() + "'><p class='summary' id='summary_" + article.getId() + "'><p></a>"
+                    + "<p class='text' id='text_" + article.getId() + "'><p>";
   });
     return string;
   };
