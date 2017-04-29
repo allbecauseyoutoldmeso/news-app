@@ -19,8 +19,7 @@ function showSummary() {
   var article = newsController.getArticleById(articleId);
   var apiGetter = new ApiGetter(makers + aylien + article.url());
   var json_obj = apiGetter.requestAndParseAPI();
-  article.addSummary(json_obj.sentences);
-  article.addText(json_obj.text);
+  newsController.updateArticle(articleId, json_obj);
   var summaryDiv = document.getElementById('summary_' + articleId);
   summaryDiv.innerHTML = article.viewSummary()[0];
 }

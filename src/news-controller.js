@@ -21,7 +21,13 @@
   };
 
   NewsController.prototype.getArticleById = function(id) {
-    return this._articleList.showArticles()[id];  
+    return this._articleList.showArticles()[id];
+  };
+
+  NewsController.prototype.updateArticle = function(id, json_obj) {
+    var article = this._articleList.showArticles()[id];
+    article.addSummary(json_obj.sentences);
+    article.addText(json_obj.text);  
   };
 
   exports.NewsController = NewsController;
