@@ -1,12 +1,6 @@
 function testArticleListViewHeadlines() {
 
-  function ArticleDouble(){}
-  ArticleDouble.prototype = {
-    headline: function() {
-      return 'Cat rescued from tree';
-    }
-  };
-  var article = new ArticleDouble();
+  article = new Article('Cat rescued from tree', 0);
   function ArticleListDouble(){}
   ArticleListDouble.prototype = {
     showArticles: function() {
@@ -15,24 +9,12 @@ function testArticleListViewHeadlines() {
   };
   var articleList = new ArticleListDouble();
   articleListView = new ArticleListView(articleList);
-  assert.toEqual(articleListView.viewHeadlines(), '<p>Cat rescued from tree</p>');
+  assert.toEqual(articleListView.viewHeadlines(), "<p><a href='headline_0'>Cat rescued from tree</a></p>");
 }
 
 function testRenderHeadlines() {
-  function ArticleDouble(){}
-  ArticleDouble.prototype = {
-    headline: function() {
-      return 'Cat rescued from tree';
-    }
-  };
-  var article = new ArticleDouble();
-  function ArticleDoubleTwo(){}
-  ArticleDoubleTwo.prototype = {
-    headline: function() {
-      return 'Grandma wins lottery';
-    }
-  };
-  var articleTwo = new ArticleDoubleTwo();
+  article = new Article('Cat rescued from tree', 0);
+  articleTwo = new Article('Grandma wins lottery', 1);
   function ArticleListDouble(){}
   ArticleListDouble.prototype = {
     showArticles: function() {
@@ -42,7 +24,7 @@ function testRenderHeadlines() {
   var articleList = new ArticleListDouble();
   articleListView = new ArticleListView(articleList);
   articleListView.renderHeadlines();
-  assert.toEqual(document.getElementById('headlines').innerHTML, '<p>Cat rescued from tree</p><p>Grandma wins lottery</p>');
+  assert.toEqual(document.getElementById('headlines').innerHTML, '<p><a href="headline_0">Cat rescued from tree</a></p><p><a href="headline_1">Grandma wins lottery</a></p>');
 }
 
 testArticleListViewHeadlines();
