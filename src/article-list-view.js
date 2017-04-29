@@ -24,5 +24,10 @@
     summaryDiv.innerHTML = this._articleList.showArticles()[id].viewSummary()[0];
   };
 
+  ArticleListView.prototype.renderText = function(id) {
+    var textDiv = document.getElementById('text_' + id);
+    textDiv.innerHTML = this._articleList.showArticles()[id].viewText();
+  };
+
   exports.ArticleListView = ArticleListView;
 })(this);

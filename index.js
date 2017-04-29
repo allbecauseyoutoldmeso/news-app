@@ -18,7 +18,7 @@ function summaryOrText() {
   if(window.location.hash.includes('headline')) {
     showSummary();
   } else
-  showText();
+  newsController.renderText(getTextIdFromUrl(window.location));
 }
 
 function showSummary() {
@@ -26,12 +26,6 @@ function showSummary() {
   var apiGetter = new ApiGetter(makers + aylien + newsController.getArticleById(articleId).url());
   newsController.updateArticle(articleId, apiGetter.requestAndParseAPI());
   newsController.renderSummary(articleId);
-}
-
-function showText() {
-  var articleId = getTextIdFromUrl(window.location);
-  var textDiv = document.getElementById('text_' + articleId);
-  textDiv.innerHTML = newsController.getArticleById(articleId).viewText();
 }
 
 function getTextIdFromUrl(location) {

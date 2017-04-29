@@ -9,7 +9,7 @@ function testArticleListViewHeadlines() {
   };
   var articleList = new ArticleListDouble();
   articleListView = new ArticleListView(articleList);
-  assert.toEqual(articleListView.viewHeadlines(), "<p><a href='#headline_0'>Cat rescued from tree</a></p><a href='#summary_0'><p id='summary_0'><p></a><p id='text_0'><p>");
+  assert.toEqual(articleListView.viewHeadlines(), "<p class='headline'><a href='#headline_0'>Cat rescued from tree</a></p><a href='#summary_0'><p class='summary' id='summary_0'><p></a><p class='text' id='text_0'><p>");
 }
 
 function testRenderHeadlines() {

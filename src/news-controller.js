@@ -34,5 +34,9 @@
     this._articleListView.renderSummary(id);
   };
 
+  NewsController.prototype.renderText = function(id) {
+    this._articleListView.renderText(id);  
+  };
+
   exports.NewsController = NewsController;
 })(this);
