@@ -11,13 +11,5 @@
     return this._articles;
   };
 
-  ArticleList.prototype.showHeadlines = function() {
-    var headlines = [];
-    this._articles.forEach(function(article){
-      headlines.push(article.headline());
-    });
-    return headlines;
-  };
-
   exports.ArticleList = ArticleList;
 })(this);
