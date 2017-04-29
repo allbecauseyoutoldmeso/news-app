@@ -16,7 +16,7 @@ function makeUrlChange() {
 
 function showSummary() {
   var articleId = getNoteFromUrl(window.location);
-  var article = newsController._articleList._articles[articleId];
+  var article = newsController.getArticleById(articleId);
   var apiGetter = new ApiGetter(makers + aylien + article.url());
   var json_obj = apiGetter.requestAndParseAPI();
   article.addSummary(json_obj.sentences);

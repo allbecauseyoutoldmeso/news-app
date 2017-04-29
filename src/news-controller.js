@@ -20,5 +20,9 @@
     articleListView.renderHeadlines();
   };
 
+  NewsController.prototype.getArticleById = function(id) {
+    return this._articleList.showArticles()[id];  
+  };
+
   exports.NewsController = NewsController;
 })(this);
