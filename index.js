@@ -9,6 +9,20 @@ var ukNews = '/uk-news';
 // newsController.createArticles();
 // newsController.renderHeadlines();
 
+
+
+function makeUrlChange() {
+  window.addEventListener('hashchange', showSummary);
+}
+
+function showCurrentNote() {
+  noteController.renderSingle(getNoteFromUrl(window.location));
+}
+
+function getNoteFromUrl(location) {
+  return location.hash.split('headline_')[1];
+}
+
 });
 
 
@@ -18,6 +32,7 @@ var ukNews = '/uk-news';
 //   console.log(apiGetter.requestAndParseAPI());
 //   article.addSummary(apiGetter.requestAndParseAPI());
 
+//summary = document.getElementById('summary_0');
 
 //newsController._articleList._articles[0]._summary.sentences[0]
 //newsController._articleList._articles[0]._summary.text
