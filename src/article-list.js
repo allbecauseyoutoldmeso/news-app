@@ -8,11 +8,7 @@
   };
 
   ArticleList.prototype.showArticles = function() {
-    var texts = [];
-    this._articles.forEach(function(article){
-      texts.push(article.viewText());
-    });
-    return texts;
+    return this._articles;
   };
 
   ArticleList.prototype.showHeadlines = function() {
