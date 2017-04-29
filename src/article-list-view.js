@@ -15,5 +15,10 @@
     element.innerHTML = this.viewHeadlines();
   };
 
+  ArticleListView.prototype.renderSummary = function(id) {
+    var summaryDiv = document.getElementById('summary_' + id);
+    summaryDiv.innerHTML = this._articleList.showArticles()[id].viewSummary()[0];
+  };
+
   exports.ArticleListView = ArticleListView;
 })(this);

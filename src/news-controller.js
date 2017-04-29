@@ -16,8 +16,8 @@
   };
 
   NewsController.prototype.renderHeadlines = function() {
-    var articleListView = new ArticleListView(this._articleList);
-    articleListView.renderHeadlines();
+    this._articleListView = new ArticleListView(this._articleList);
+    this._articleListView.renderHeadlines();
   };
 
   NewsController.prototype.getArticleById = function(id) {
@@ -31,9 +31,7 @@
   };
 
   NewsController.prototype.renderSummary = function(id) {
-    var article = this._articleList.showArticles()[id];
-    var summaryDiv = document.getElementById('summary_' + id);
-    summaryDiv.innerHTML = article.viewSummary()[0];
+    this._articleListView.renderSummary(id);
   };
 
   exports.NewsController = NewsController;
