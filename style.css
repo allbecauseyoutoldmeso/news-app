@@ -23,10 +23,18 @@ body {
 
 .summary {
   color: hotpink;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
 }
 
 .text {
   color: blue;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
 }
 
 a {
