@@ -27,7 +27,13 @@
   NewsController.prototype.updateArticle = function(id, json_obj) {
     var article = this._articleList.showArticles()[id];
     article.addSummary(json_obj.sentences);
-    article.addText(json_obj.text);  
+    article.addText(json_obj.text);
+  };
+
+  NewsController.prototype.renderSummary = function(id) {
+    var article = this._articleList.showArticles()[id];
+    var summaryDiv = document.getElementById('summary_' + id);
+    summaryDiv.innerHTML = article.viewSummary()[0];
   };
 
   exports.NewsController = NewsController;

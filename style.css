@@ -22,3 +22,7 @@ a {
 a:hover {
     color: hotpink;
 }
+
+a:visited {
+    color: hotpink;
+}

@@ -16,12 +16,9 @@ function makeUrlChange() {
 
 function showSummary() {
   var articleId = getNoteFromUrl(window.location);
-  var article = newsController.getArticleById(articleId);
-  var apiGetter = new ApiGetter(makers + aylien + article.url());
-  var json_obj = apiGetter.requestAndParseAPI();
-  newsController.updateArticle(articleId, json_obj);
-  var summaryDiv = document.getElementById('summary_' + articleId);
-  summaryDiv.innerHTML = article.viewSummary()[0];
+  var apiGetter = new ApiGetter(makers + aylien + newsController.getArticleById(articleId).url());
+  newsController.updateArticle(articleId, apiGetter.requestAndParseAPI());
+  newsController.renderSummary(articleId);
 }
 
 function getNoteFromUrl(location) {
