@@ -6,8 +6,9 @@
 
   ArticleListView.prototype.viewHeadlines = function () {
     var string = '';
-    var id = article.getId()
+
     this._articleList.showArticles().forEach(function(article){
+    var id = article.getId();
     string = string + "<p class='headline'><a href='#headline_" + id + "'>" + article.headline() + "</a></p>"
                     + "<a href='#summary_" + id + "'><p class='summary' id='summary_" + id + "'><p></a>"
                     + "<p class='text' id='text_" + id + "'><p>";
