@@ -30,11 +30,11 @@
   };
 
   NewsController.prototype.renderSummary = function(id) {
-    this._articleListView.renderSummary(id);
+    this._articleListView.render('summary_' + id, this._articleList.showArticles()[id].viewSummary()[0] );
   };
 
   NewsController.prototype.renderText = function(id) {
-    this._articleListView.renderText(id);
+    this._articleListView.render('text_' + id, this._articleList.showArticles()[id].viewText());
   };
 
   exports.NewsController = NewsController;

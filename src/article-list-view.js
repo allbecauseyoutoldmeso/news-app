@@ -19,14 +19,6 @@
     this.render('headlines', this.viewHeadlines());
   };
 
-  ArticleListView.prototype.renderSummary = function(id) {
-    this.render('summary_' + id, this._articleList.showArticles()[id].viewSummary()[0] );
-  };
-
-  ArticleListView.prototype.renderText = function(id) {
-    this.render('text_' + id, this._articleList.showArticles()[id].viewText());
-  };
-
   ArticleListView.prototype.render = function(elementId, html) {
     var element = document.getElementById(elementId);
     element.innerHTML = html;
