@@ -6,27 +6,30 @@
 
   ArticleListView.prototype.viewHeadlines = function () {
     var string = '';
+    var id = article.getId()
     this._articleList.showArticles().forEach(function(article){
-    string = string + "<p class='headline'><a href='#headline_" + article.getId() + "'>" + article.headline() + "</a></p>"
-                    + "<a href='#summary_" + article.getId() + "'><p class='summary' id='summary_" + article.getId() + "'><p></a>"
-                    + "<p class='text' id='text_" + article.getId() + "'><p>";
+    string = string + "<p class='headline'><a href='#headline_" + id + "'>" + article.headline() + "</a></p>"
+                    + "<a href='#summary_" + id + "'><p class='summary' id='summary_" + id + "'><p></a>"
+                    + "<p class='text' id='text_" + id + "'><p>";
   });
     return string;
   };
 
   ArticleListView.prototype.renderHeadlines = function() {
-    var element = document.getElementById('headlines');
-    element.innerHTML = this.viewHeadlines();
+    this.render('headlines', this.viewHeadlines());
   };
 
   ArticleListView.prototype.renderSummary = function(id) {
-    var summaryDiv = document.getElementById('summary_' + id);
-    summaryDiv.innerHTML = this._articleList.showArticles()[id].viewSummary()[0];
+    this.render('summary_' + id, this._articleList.showArticles()[id].viewSummary()[0] );
   };
 
   ArticleListView.prototype.renderText = function(id) {
-    var textDiv = document.getElementById('text_' + id);
-    textDiv.innerHTML = this._articleList.showArticles()[id].viewText();
+    this.render('text_' + id, this._articleList.showArticles()[id].viewText());
+  };
+
+  ArticleListView.prototype.render = function(elementId, html) {
+    var element = document.getElementById(elementId);
+    element.innerHTML = html;
   };
 
   exports.ArticleListView = ArticleListView;
