@@ -1,26 +1,12 @@
-User Stories
+Nippy News
 ___________
 
-As a busy politician
-So I know what the big stories of the day are
-I can see all of today's headlines in one place
+* Makers Academy Week 7 Project
 
-As a busy politician
-So I can get a few more details about an important story
-I can read a summary of a news article
+* Single page Javascript App which uses the Guardian's API service to bring you the latest top stories.
 
-As a busy politician
-So that I can get an in depth understanding of a very important story
-I can read a full news article
+<img width="605" alt="screen shot 2017-05-14 at 16 39 29" src="https://cloud.githubusercontent.com/assets/25392162/26035456/1ca67cda-38c4-11e7-82e4-05cdf8c3312b.png">
 
-As a busy politician
-So that I have something nice to look at
-I can see a picture to illustrate each news article when I browse headlines
+<img width="609" alt="screen shot 2017-05-14 at 16 40 02" src="https://cloud.githubusercontent.com/assets/25392162/26035460/1df4bd36-38c4-11e7-835e-7b585ecdf4fb.png">
 
-As a busy politician
-Just in case my laptop breaks
-I can read the site comfortably on my phone
-
-As a busy politician
-To make my news reading more fun
-I can see whizzy animations in the app
+<img width="608" alt="screen shot 2017-05-14 at 16 40 17" src="https://cloud.githubusercontent.com/assets/25392162/26035461/1f5c64d0-38c4-11e7-8363-49c8b4db0007.png">
