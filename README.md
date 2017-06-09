@@ -1,7 +1,7 @@
 Nippy News
 ___________
 
-* Makers Academy Week 7 Project
+* Makers Academy Week 7 project, pair-coded.
 
 * Single page Vanilla Javascript App which uses the Guardian and Aylien API services to bring you the latest top stories.
 
