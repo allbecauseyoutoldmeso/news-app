@@ -11,7 +11,7 @@ ___________
 
 * Testing library written from scratch!
 
-* Not currently deployed as the Guardian API service is not free! 
+* Not currently deployed as the Guardian charges for API requests. 
 
 <img width="605" alt="screen shot 2017-05-14 at 16 39 29" src="https://cloud.githubusercontent.com/assets/25392162/26035456/1ca67cda-38c4-11e7-82e4-05cdf8c3312b.png">
 
