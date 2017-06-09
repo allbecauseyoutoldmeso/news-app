@@ -3,7 +3,7 @@ ___________
 
 * Makers Academy Week 7 Project
 
-* Single page Javascript App which uses the Guardian and Aylien API services to bring you the latest top stories.
+* Single page Vanilla Javascript App which uses the Guardian and Aylien API services to bring you the latest top stories.
 
 * Top ten headlines displayed.
 
