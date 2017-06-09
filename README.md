@@ -3,9 +3,15 @@ ___________
 
 * Makers Academy Week 7 Project
 
-* Single page Javascript App which uses the Guardian's API service to bring you the latest top stories.
+* Single page Javascript App which uses the Guardian and Aylien API services to bring you the latest top stories.
+
+* Top ten headlines displayed.
+
+* Click on a headline to see a summary, and on the summary to see the full text.
 
 * Testing library written from scratch!
+
+* Not currently deployed as the Guardian API service is not free! 
 
 <img width="605" alt="screen shot 2017-05-14 at 16 39 29" src="https://cloud.githubusercontent.com/assets/25392162/26035456/1ca67cda-38c4-11e7-82e4-05cdf8c3312b.png">
 
